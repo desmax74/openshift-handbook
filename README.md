@@ -1,4 +1,4 @@
-##Notes about Openshift, Istio, Eclipse Che 6
+## Notes about Openshift, Istio, Eclipse Che 6
  
 
 ##### Openshift 3.11 
