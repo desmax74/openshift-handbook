@@ -5,7 +5,7 @@
 
 
 #### Virtualbox
-https://download.virtualbox.org/virtualbox/6.0.4/VirtualBox-6.0-6.0.4_128413_fedora29-1.x86_64.rpm
+https://download.virtualbox.org/virtualbox/6.0.4/virtualbox-6.0_6.0.4-128413~Ubuntu~bionic_amd64.deb
 https://download.virtualbox.org/virtualbox/6.0.4/Oracle_VM_VirtualBox_Extension_Pack-6.0.4.vbox-extpack
 
 [could require the installation of the kernel's header ]
@@ -16,7 +16,7 @@ sudo /usr/lib/virtualbox/vboxdrv.sh setup
 
 #### Docker 
 ```console 
-
+sudo apt-get install -y docker
 ```
 
 #### Minishift
@@ -29,7 +29,7 @@ wget https://github.com/minishift/minishift/releases/download/v1.31.0/minishift-
 export PATH=<minishift_path>:$PATH
 ```
 
-#### Openshift client
+#### Openshift client (oc and kubectl)
 ```console 
 wget https://github.com/openshift/origin/releases/download/v3.11.0/openshift-origin-client-tools-v3.11.0-0cbc58b-linux-64bit.tar.gz
 ```
@@ -39,8 +39,13 @@ export PATH=<openshift_client_path>:$PATH
 ```
 
 #### Kubectl
+##### you could skip since kubectl is delivered with oc
 ```console 
-
+sudo apt-get update && sudo apt-get install -y apt-transport-https
+curl -s https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key add -
+echo "deb https://apt.kubernetes.io/ kubernetes-xenial main" | sudo tee -a /etc/apt/sources.list.d/kubernetes.list
+sudo apt-get update
+sudo apt-get install -y kubectl
 ```
 
 #### Start minishift 
@@ -58,7 +63,26 @@ oc login $(minishift ip):8443 -u admin -p admin
 
 #### Install service mesh
 ```console 
-./scripts/mesh_installation.sh
+minishift openshift config set --target=kube --patch '{
+    "admissionConfig": {
+        "pluginConfig": {
+            "ValidatingAdmissionWebhook": {
+                "configuration": {
+                    "apiVersion": "apiserver.config.k8s.io/v1alpha1",
+                    "kind": "WebhookAdmission",
+                    "kubeConfigFile": "/dev/null"
+                }
+            },
+            "MutatingAdmissionWebhook": {
+                "configuration": {
+                    "apiVersion": "apiserver.config.k8s.io/v1alpha1",
+                    "kind": "WebhookAdmission",
+                    "kubeConfigFile": "/dev/null"
+                }
+            }
+        }
+    }
+}'
 ```
 
 #### Fix elasticsearch
@@ -95,10 +119,10 @@ oc get pods -w -n istio-operator
 
 #### Istio installation
 ```console 
-./scripts/istio_installation.sh
+scripts/istio_installation.sh
 ```
 
-###### wait the componet to be ready
+###### wait the components to be ready
 ```console 
 oc get pods -n istio-system
 ```
@@ -113,7 +137,7 @@ minishift console
 
 #### Eclipse CHE
 ```console 
-minishift addons enable che && minishift addons apply chem
+minishift addons enable che && minishift addons apply che
 minishift addons apply --addon-env CHE_DOCKER_IMAGE=eclipse/che-server:local che
 ```
 

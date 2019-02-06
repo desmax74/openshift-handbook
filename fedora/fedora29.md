@@ -39,6 +39,7 @@ export PATH=<openshift_client_path>:$PATH
 ```
 
 #### Kubectl
+###### you could skip since kubectl is delivered with oc
 ```console 
 dnf install -y kubernetes-client
 ```
@@ -46,7 +47,7 @@ dnf install -y kubernetes-client
 #### Start minishift 
 [reviews amount of ram and cpu (by default are 8gb and 3 cpu)]
 ```console 
-./scripts/minishift_start.sh
+scripts/minishift_start.sh
 ```
 
 ##### Setup minishift
@@ -58,7 +59,26 @@ oc login $(minishift ip):8443 -u admin -p admin
 
 #### Install service mesh
 ```console 
-./scripts/mesh_installation.sh
+minishift openshift config set --target=kube --patch '{
+    "admissionConfig": {
+        "pluginConfig": {
+            "ValidatingAdmissionWebhook": {
+                "configuration": {
+                    "apiVersion": "apiserver.config.k8s.io/v1alpha1",
+                    "kind": "WebhookAdmission",
+                    "kubeConfigFile": "/dev/null"
+                }
+            },
+            "MutatingAdmissionWebhook": {
+                "configuration": {
+                    "apiVersion": "apiserver.config.k8s.io/v1alpha1",
+                    "kind": "WebhookAdmission",
+                    "kubeConfigFile": "/dev/null"
+                }
+            }
+        }
+    }
+}'
 ```
 
 #### Fix elasticsearch
@@ -95,10 +115,10 @@ oc get pods -w -n istio-operator
 
 #### Istio installation
 ```console 
-./scripts/istio_installation.sh
+scripts/istio_installation.sh
 ```
 
-###### wait the componet to be ready
+###### wait the components to be ready
 ```console 
 oc get pods -n istio-system
 ```
@@ -113,7 +133,7 @@ minishift console
 
 #### Eclipse CHE
 ```console 
-minishift addons enable che && minishift addons apply chem
+minishift addons enable che && minishift addons apply che
 minishift addons apply --addon-env CHE_DOCKER_IMAGE=eclipse/che-server:local che
 ```
 
