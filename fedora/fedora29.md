@@ -159,12 +159,15 @@ sudo yum -y install buildah
 #### Podman
 ```console 
 sudo dnf install -y podman
-
 sudo dnf install -y git runc libassuan-devel golang golang-github-cpuguy83-go-md2man glibc-static \
                                   gpgme-devel glib2-devel device-mapper-devel libseccomp-devel \
                                   atomic-registries iptables skopeo-containers containernetworking-cni \
                                   conmon ostree-devel
+```
 
+###### Install Golang
+```console 
+cd
 curl -L https://dl.google.com/go/go1.11.5.linux-amd64.tar.gz --output go.tar.gz | tar xz
 ```
 ```console 

@@ -169,6 +169,12 @@ sudo apt-get install libdevmapper-dev libglib2.0-dev libgpgme11-dev golang libse
                         go-md2man libprotobuf-dev libprotobuf-c0-dev libseccomp-dev python3-setuptools
 ```
 
+###### Install Golang
+```console 
+cd
+curl -L https://dl.google.com/go/go1.11.5.linux-amd64.tar.gz --output go.tar.gz | tar xz
+```
+
 ###### Build and install conmon
 ```console 
 export GOPATH=~/go
