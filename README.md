@@ -1,4 +1,4 @@
-#Notes about Openshift, Istio, Eclipse Che 6 on Fedora 29
+Notes about Openshift, Istio, Eclipse Che 6 on Fedora 29
 Openshift 3.11 
 
 Istio 1.0.5
@@ -7,8 +7,7 @@ Eclipse Che 6 (single user)
 
 [Git, Maven (Che uses the m2 repo) and JDK already present and configured correctly]
 
-
-###Virtualbox
+Virtualbox
 https://download.virtualbox.org/virtualbox/6.0.4/VirtualBox-6.0-6.0.4_128413_fedora29-1.x86_64.rpm
 https://download.virtualbox.org/virtualbox/6.0.4/Oracle_VM_VirtualBox_Extension_Pack-6.0.4.vbox-extpack
 
@@ -18,12 +17,12 @@ https://download.virtualbox.org/virtualbox/6.0.4/Oracle_VM_VirtualBox_Extension_
 sudo /usr/lib/virtualbox/vboxdrv.sh setup
 ```
 
-###docker 
+Docker 
 ```console 
 sudo dnf install -y docker
 ```
 
-###minishift
+Minishift
 ```console
 wget https://github.com/minishift/minishift/releases/download/v1.31.0/minishift-1.31.0-linux-amd64.tgz
 ```
@@ -33,7 +32,7 @@ wget https://github.com/minishift/minishift/releases/download/v1.31.0/minishift-
 export PATH=<minishift_path>:$PATH
 ```
 
-###openshift client
+Openshift client
 ```console 
 wget https://github.com/openshift/origin/releases/download/v3.11.0/openshift-origin-client-tools-v3.11.0-0cbc58b-linux-64bit.tar.gz
 ```
@@ -42,30 +41,30 @@ wget https://github.com/openshift/origin/releases/download/v3.11.0/openshift-ori
 export PATH=<openshift_client_path>:$PATH
 ```
 
-###kubectl
+Kubectl
 ```console 
 dnf install -y kubernetes-client
 ```
 
-###start minishift_start_sh 
+Start minishift 
 [reviews amount of ram and cpu (by default are 8gb and 3 cpu)]
 ```console 
 ./scripts/minishift_start.sh
 ```
 
-###setup
+Setup minishift
 ```console 
 eval $(minishift oc-env) 
 eval $(minishift docker-env)
 oc login $(minishift ip):8443 -u admin -p admin
 ```
 
-###install service mesh
+Install service mesh
 ```console 
 ./scripts/mesh_installation.sh
 ```
 
-###fix elasticsearch
+Fix elasticsearch
 ```console 
 $ minishift ssh
 [docker@istio-tutorial ~]$ sudo -i
@@ -77,7 +76,7 @@ logout
 logout
 ```
 
-###ISTIO
+Istio
 ```console 
 curl -L https://github.com/istio/istio/releases/download/1.0.5/istio-1.0.5-linux.tar.gz | tar xz
 ```
@@ -86,7 +85,7 @@ curl -L https://github.com/istio/istio/releases/download/1.0.5/istio-1.0.5-linux
 export PATH=<istioctl_path>:$PATH
 ```
 
-###istio_operator
+Istio operator
 ```console 
 oc new-project istio-operator
 oc new-app -f https://raw.githubusercontent.com/Maistra/openshift-ansible/maistra-0.4/istio/istio_community_operator_template.yaml --param=OPENSHIFT_ISTIO_MASTER_PUBLIC_URL="https://$(minishift ip):8443"
@@ -97,7 +96,7 @@ oc new-app -f https://raw.githubusercontent.com/Maistra/openshift-ansible/maistr
 oc get pods -w -n istio-operator
 ```
 
-###installation for istio
+Istio installation
 ```console 
 ./scripts/istio_installation.sh
 ```
@@ -115,7 +114,7 @@ minishift console
 ```
 
 
-###Eclipse CHE
+Eclipse CHE
 ```console 
 minishift addons enable che && minishift addons apply chem
 minishift addons apply --addon-env CHE_DOCKER_IMAGE=eclipse/che-server:local che
@@ -124,23 +123,23 @@ minishift addons apply --addon-env CHE_DOCKER_IMAGE=eclipse/che-server:local che
 [the address could find in the webconsole->application->routes, usually is http://che-mini-che.{ip}.nip.io/dashboard/]
 
 
-##optional tools
+Optional tools
 
-###Siege for load testing
+Siege for load testing
 ```console 
 sudo dnf install -y siege
 ```
 
-###Stern for logs
+Stern for logs
 ```console 
 sudo curl --output /usr/local/bin/stern -L https://github.com/wercker/stern/releases/download/1.6.0/stern_linux_amd64 && sudo chmod +x /usr/local/bin/stern
 ```
-###Buildah
+Buildah
 ```console 
 sudo yum -y install buildah
 ```
 
-###Podman
+Podman
 ```console 
 sudo dnf install -y podman
 
