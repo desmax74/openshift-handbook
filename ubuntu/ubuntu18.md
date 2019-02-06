@@ -1,9 +1,6 @@
 #### Notes about Openshift, Istio, Eclipse Che 6 on Ubuntu 18.10
 
 
-###Work in Progress
-
-
 #### Virtualbox
 https://download.virtualbox.org/virtualbox/6.0.4/virtualbox-6.0_6.0.4-128413~Ubuntu~bionic_amd64.deb
 https://download.virtualbox.org/virtualbox/6.0.4/Oracle_VM_VirtualBox_Extension_Pack-6.0.4.vbox-extpack
