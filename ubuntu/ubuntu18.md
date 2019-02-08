@@ -94,7 +94,7 @@ logout
 logout
 ```
 
-#### Istio
+### Istio
 ```console 
 curl -L https://github.com/istio/istio/releases/download/1.0.5/istio-1.0.5-linux.tar.gz | tar xz
 ```
@@ -114,7 +114,7 @@ oc new-app -f https://raw.githubusercontent.com/Maistra/openshift-ansible/maistr
 oc get pods -w -n istio-operator
 ```
 
-###IDE
+### IDE
 You could choose a plain Eclipse Che or CodeReady, not together
 #### Istio installation
 ```console 
