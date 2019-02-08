@@ -115,7 +115,7 @@ oc get pods -w -n istio-operator
 ```
 
 ### IDE
-You could choose a plain Eclipse Che or CodeReady, not together
+[You could choose a plain Eclipse Che or CodeReady, not together]
 #### Istio installation
 ```console 
 scripts/istio_installation.sh

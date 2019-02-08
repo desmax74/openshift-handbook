@@ -131,7 +131,7 @@ minishift console
 ```
 
 ### IDE
-You could choose a plain Eclipse Che or CodeReady, not together
+[You could choose a plain Eclipse Che or CodeReady, not together]
 #### Eclipse CHE
 ```console 
 minishift addons enable che && minishift addons apply che
