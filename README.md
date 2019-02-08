@@ -1,9 +1,10 @@
-## Notes about Openshift, Istio, Eclipse Che 6
+## Notes about Openshift configurations 
  
-
 ##### Openshift 3.11 
 ##### Istio 1.0.5
 ##### Eclipse Che 6 (single user)
+##### Codeready 1.0.0.GA
+
 
 [Git, Maven (Che uses the m2 repo) and JDK are supposed installed and configured]
 

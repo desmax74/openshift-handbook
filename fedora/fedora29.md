@@ -130,13 +130,17 @@ oc get pods -n istio-system
 minishift console
 ```
 
-
+###IDE
+You could choose a plain Eclipse Che or CodeReady, not together
 #### Eclipse CHE
 ```console 
 minishift addons enable che && minishift addons apply che
 minishift addons apply --addon-env CHE_DOCKER_IMAGE=eclipse/che-server:local che
 ```
-
+#### CodeReady
+```console 
+scripts/deploy_codeready.sh  --deploy
+```
 [the address could find in the webconsole->application->routes, usually is http://che-mini-che.{ip}.nip.io/dashboard/]
 
 
@@ -151,11 +155,11 @@ sudo dnf install -y siege
 ```console 
 sudo curl --output /usr/local/bin/stern -L https://github.com/wercker/stern/releases/download/1.6.0/stern_linux_amd64 && sudo chmod +x /usr/local/bin/stern
 ```
+
 #### Buildah
 ```console 
 sudo yum -y install buildah
 ```
-
 #### Podman
 ```console 
 sudo dnf install -y podman
@@ -164,7 +168,6 @@ sudo dnf install -y git runc libassuan-devel golang golang-github-cpuguy83-go-md
                                   atomic-registries iptables skopeo-containers containernetworking-cni \
                                   conmon ostree-devel
 ```
-
 ###### Install Golang
 ```console 
 cd
@@ -177,3 +180,10 @@ git clone https://github.com/containers/libpod/ $GOPATH/src/github.com/container
 cd $GOPATH/src/github.com/containers/libpod
 make
 sudo make install PREFIX=/usr
+```
+
+#### Skopeo 
+CLI to works with on container images and image repositories 
+```console 
+sudo dnf install -y skopeo
+```
