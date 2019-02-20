@@ -1,11 +1,10 @@
-#### Virtualbox
-https://download.virtualbox.org/virtualbox/6.0.4/VirtualBox-6.0-6.0.4_128413_fedora29-1.x86_64.rpm
-https://download.virtualbox.org/virtualbox/6.0.4/Oracle_VM_VirtualBox_Extension_Pack-6.0.4.vbox-extpack
-
-[could require the installation of the kernel's header ]
-
+#### kvm
 ```console 
-sudo /usr/lib/virtualbox/vboxdrv.sh setup
+sudo dnf install libvirt qemu-kvm
+sudo usermod -a -G libvirt $(whoami)
+newgrp libvirt
+sudo curl -L https://github.com/dhiltgen/docker-machine-kvm/releases/download/v0.10.0/docker-machine-driver-kvm-centos7 -o /usr/local/bin/docker-machine-driver-kvm
+sudo chmod +x /usr/local/bin/docker-machine-driver-kvm
 ```
 
 #### Docker 
@@ -41,7 +40,7 @@ dnf install -y kubernetes-client
 #### Start minishift 
 [reviews amount of ram and cpu (by default are 8gb and 3 cpu)]
 ```console 
-scripts/minishift_start.sh
+scripts/minishift/fedora/minishift_start.sh
 ```
 
 ##### Setup minishift

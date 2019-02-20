@@ -46,7 +46,7 @@ sudo apt-get install -y kubectl
 #### Start minishift 
 [reviews amount of ram and cpu (by default are 8gb and 3 cpu)]
 ```console 
-./scripts/minishift_start.sh
+./scripts/minishift/ubuntu/minishift_start.sh
 ```
 
 ##### Setup minishift

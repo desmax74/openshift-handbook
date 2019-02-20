@@ -64,7 +64,7 @@ oc get pods -w -n istio-operator
 
 #### Istio installation
 ```console 
-scripts/istio_installation.sh
+scripts/istio/istio_installation.sh
 ```
 
 ###### wait the components to be ready
