@@ -7,5 +7,6 @@
 ##### Eclipse Che 6 (single user) [**[Fedora 29](fedora/eclipse_che.md)** - **[Ubuntu 18.x](ubuntu/eclipse_che.md)**]
 ##### Codeready 1.0.0.GA [**[Fedora 29](fedora/codeReady.md)** - **[Ubuntu 18.x](ubuntu/codeReady.md)**]
 ##### Knative 0.3.0 [**[Fedora 29](fedora/knative.md)**]
+##### Infinispan 9 [**[Fedora 29](fedora/infinispan.md)** - **[Ubuntu 18.x](ubuntu/infinispan.md)**]
 
 ##### Buildah, Podman Skopeo, Siege,  Stern and other optional tools [**[Fedora 29](fedora/optional.md)**  - **[Ubuntu 18.x](ubuntu/optional.md)** ]
