@@ -8,5 +8,6 @@
 ##### Codeready 1.0.0.GA [**[Fedora 29](fedora/codeReady.md)** - **[Ubuntu 18.x](ubuntu/codeReady.md)**]
 ##### Knative 0.3.0 [**[Fedora 29](fedora/knative.md)**]
 ##### Infinispan 9 [**[Fedora 29](fedora/infinispan.md)** - **[Ubuntu 18.x](ubuntu/infinispan.md)**]
+##### Kafka/Zookeeper/Strimzi 0.11.0  [**[Fedora 29](fedora/kafka.md)** - **[Ubuntu 18.x]**]
 
 ##### Buildah, Podman Skopeo, Siege,  Stern and other optional tools [**[Fedora 29](fedora/optional.md)**  - **[Ubuntu 18.x](ubuntu/optional.md)** ]
