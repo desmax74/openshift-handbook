@@ -4,31 +4,25 @@
 oc login -u system:admin
 eval $(minishift oc-env) 
 eval $(minishift docker-env)
+oc new-project my-kafka-project
 ```
 
-#### Choose the name of the namespace to deploy
-```console 
-cd scripts/kafka/fedora/
-sed -i 's/namespace: .*/namespace: my-kafka-project/' cluster-operator/*RoleBinding*.yaml
-```
 #### Deploy the Cluster Operator
 ```console 
-oc new-project my-kafka-project
-oc apply -f cluster-operator -n my-kafka-project
-oc apply -f templates/cluster-operator -n my-kafka-project
-```
+sed -i 's/namespace: .*/namespace: my-kafka-project/' install/cluster-operator/*RoleBinding*.yaml
+oc apply -f install/cluster-operator -n my-kafka-project
+oc apply -f examples/templates/cluster-operator -n my-kafka-project
 
+#### Create the cluster
 ```console 
-oc apply -f cluster-operator/020-RoleBinding-strimzi-cluster-operator.yaml -n my-kafka-project
-oc apply -f cluster-operator/032-RoleBinding-strimzi-cluster-operator-topic-operator-delegation.yaml -n my-kafka-project
-oc apply -f cluster-operator/031-RoleBinding-strimzi-cluster-operator-entity-operator-delegation.yaml -n my-kafka-project
-```
-#### Create my-cluster
-```console 
-oc create -f my_cluster.yaml
+oc create -f examples/kafka/kafka-ephemeral.yaml
 ```
 #### create Topic
 ```console 
 oc create -f master_events_topic.yaml
 oc create -f users_input.yaml
+```
+#### Checks Topic
+```console 
+oc exec -it my-cluster-kafka-0 -- bin/kafka-topics.sh --zookeeper localhost:2181 --describe
 ```
