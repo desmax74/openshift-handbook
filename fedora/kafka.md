@@ -12,7 +12,7 @@ oc new-project my-kafka-project
 sed -i 's/namespace: .*/namespace: my-kafka-project/' install/cluster-operator/*RoleBinding*.yaml
 oc apply -f install/cluster-operator -n my-kafka-project
 oc apply -f examples/templates/cluster-operator -n my-kafka-project
-
+```
 #### Create the cluster
 ```console 
 oc create -f examples/kafka/kafka-ephemeral.yaml
