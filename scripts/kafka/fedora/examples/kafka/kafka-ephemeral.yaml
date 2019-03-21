@@ -8,7 +8,8 @@ spec:
     replicas: 3
     listeners:
       plain: {}
-      tls: {}
+      external:
+        type: route
     config:
       offsets.topic.replication.factor: 3
       transaction.state.log.replication.factor: 3
