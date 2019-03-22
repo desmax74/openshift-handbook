@@ -14,9 +14,11 @@ oc apply -f install/cluster-operator -n my-kafka-project
 oc apply -f examples/templates/cluster-operator -n my-kafka-project
 ```
 #### Create the cluster
+Wait the creation of all kafka and zookeeper pods before to run the command
 ```console 
 oc create -f examples/kafka/kafka-ephemeral.yaml
 ```
+This create the cluster with auto create topics and the external routes to reach the brokers with tls authentication
 #### create Topic
 ```console 
 oc create -f master_events_topic.yaml
