@@ -28,3 +28,7 @@ oc create -f users_input.yaml
 ```console 
 oc exec -it my-cluster-kafka-0 -- bin/kafka-topics.sh --zookeeper localhost:2181 --describe
 ```
+#### Checks Topic's offset
+```console 
+oc exec -it my-cluster-kafka-0 -- bin/kafka-run-class.sh kafka.tools.GetOffsetShell --broker-list localhost:9092 --topic events
+```
