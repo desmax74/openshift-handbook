@@ -1,6 +1,11 @@
 Prerequisite Openshift 3.11
 https://github.com/desmax74/openshift-handbook/blob/master/ubuntu/openshift.md
 
+#### start openshift with kafka 
+```console
+sh scripts/kafka/ubuntu/minishift_start.sh 
+```
+
 #### Note:  We consider kafka watching a single namespace where is deployed, to watch multiple namespaces or all namespaces the configuration is differente
 #### log as a system
 ```console 
