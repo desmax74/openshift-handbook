@@ -31,6 +31,7 @@ This create the cluster with auto create topics and the external routes to reach
 ```console 
 oc create -f master_events_topic.yaml
 oc create -f users_input.yaml
+oc create -f snapshots.yaml
 ```
 #### Checks Topic
 ```console 
