@@ -14,8 +14,8 @@ curl -L https://github.com/istio/istio/releases/download/1.1.1/istio-1.1.1-linux
 
 #### Fix elasticsearch
 ```console 
-oc apply -f install/kubernetes/helm/istio-init/files/crd-11.yaml
-oc apply -f install/kubernetes/istio-demo.yaml
+oc apply -f scripts/istio/crd-11.yaml
+oc apply -f scripts/istio/istio-demo.yaml
 oc project istio-system
 oc expose svc istio-ingressgateway
 oc expose svc grafana
