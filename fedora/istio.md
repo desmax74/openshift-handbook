@@ -10,6 +10,12 @@ oc login -u system:admin
 ```console 
 curl -L https://github.com/istio/istio/releases/download/1.1.1/istio-1.1.1-linux.tar.gz | tar xz
 ```
+[add istioctl in the bin foder to your env]
+```console 
+cd istio-1.1.1
+export ISTIO_HOME=`pwd`
+export PATH=$ISTIO_HOME/bin:$PATH
+```
 
 
 #### Fix elasticsearch
