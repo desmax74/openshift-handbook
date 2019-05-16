@@ -5,8 +5,7 @@
 # in that directory
 
 minishift profile set kafka
-##increased memory to run with istio 1.1.1
-minishift config set memory 16GB
+minishift config set memory 10GB
 minishift config set cpus 4
 minishift config set vm-driver kvm
 minishift config set image-caching true
