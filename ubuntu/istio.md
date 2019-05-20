@@ -18,7 +18,7 @@ export PATH=$ISTIO_HOME/bin:$PATH
 ```
 
 
-#### Fix elasticsearch
+#### Install components
 ```console 
 oc apply -f scripts/istio/crd-11.yaml
 oc apply -f scripts/istio/istio-demo.yaml
