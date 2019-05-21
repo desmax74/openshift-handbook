@@ -29,9 +29,9 @@ oc create -f examples/kafka/kafka-ephemeral.yaml
 This create the cluster with auto create topics and the external routes to reach the brokers with tls authentication
 #### create Topic
 ```console 
-oc create -f events.yaml
-oc create -f control.yaml
-oc create -f snapshot.yaml
+oc create -f scripts/kafka/fedora/events.yaml
+oc create -f scripts/kafka/fedora/control.yaml
+oc create -f scripts/kafka/fedora/snapshot.yaml
 ```
 #### Checks Topic
 ```console 
