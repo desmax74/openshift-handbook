@@ -14,7 +14,7 @@ sudo dnf install -y docker
 
 #### Minishift
 ```console
-wget https://github.com/minishift/minishift/releases/download/v1.31.0/minishift-1.31.0-linux-amd64.tgz
+wget https://github.com/minishift/minishift/releases/download/v1.34.0/minishift-1.34.0-linux-amd64.tgz
 ```
 
 [add to your env ] 
