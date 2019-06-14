@@ -5,7 +5,7 @@
 # in that directory
 
 minishift profile set kafka
-minishift config set memory 10GB
+minishift config set memory 8GB
 minishift config set cpus 4
 minishift config set vm-driver virtualbox
 minishift config set image-caching true
