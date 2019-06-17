@@ -31,7 +31,7 @@ This create the cluster with auto create topics and the external routes to reach
 ```console 
 oc create -f events.yaml
 oc create -f control.yaml
-oc create -f snapshots.yaml
+oc create -f snapshot.yaml
 oc create -f kiesessioninfos.yaml
 ```
 #### Checks Topic
