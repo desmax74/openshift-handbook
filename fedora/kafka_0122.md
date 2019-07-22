@@ -42,7 +42,7 @@ This create the cluster with auto create topics and the external routes to reach
 ```console 
 oc create -f scripts/kafka/fedora/events.yaml
 oc create -f scripts/kafka/fedora/control.yaml
-oc create -f scripts/kafka/fedora/snapshots.yaml
+oc create -f scripts/kafka/fedora/snapshot.yaml
 oc create -f scripts/kafka/fedora/kiesessioninfos.yaml
 ```
 #### Checks Topic
