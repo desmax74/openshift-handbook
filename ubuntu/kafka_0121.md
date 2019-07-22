@@ -17,19 +17,19 @@ oc new-project my-kafka-project
 
 #### Strimzi installation file
 ```console 
-curl -L https://github.com/strimzi/strimzi-kafka-operator/releases/download/0.12.2/strimzi-cluster-operator-0.12.2.yaml \
+curl -L https://github.com/strimzi/strimzi-kafka-operator/releases/download/0.12.1/strimzi-cluster-operator-0.12.1.yaml \
  | sed 's/namespace: .*/namespace: my-kafka-project/' \
  | kubectl -n my-kafka-project apply -f -
 ```
  
 #### Create the cluster ephemeral
 ```console 
-kubectl apply -f https://raw.githubusercontent.com/strimzi/strimzi-kafka-operator/0.12.2/examples/kafka/kafka-ephemeral.yaml -n my-kafka-project
+kubectl apply -f https://raw.githubusercontent.com/strimzi/strimzi-kafka-operator/0.12.1/examples/kafka/kafka-ephemeral.yaml -n my-kafka-project
 ```
 
 #### Create the cluster persistent
 ```console 
-kubectl apply -f https://raw.githubusercontent.com/strimzi/strimzi-kafka-operator/0.12.2/examples/kafka/kafka-persistent-single.yaml -n my-kafka-project
+kubectl apply -f https://raw.githubusercontent.com/strimzi/strimzi-kafka-operator/0.12.1/examples/kafka/kafka-persistent-single.yaml -n my-kafka-project
 ```
 
 #### Checks cluster status 
