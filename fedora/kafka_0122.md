@@ -34,7 +34,7 @@ kubectl apply -f https://raw.githubusercontent.com/strimzi/strimzi-kafka-operato
 
 #### Checks cluster status 
 ```console
-kubectl get pods -n kafka -w
+kubectl get pods -n my-kafka-project -w
 ```
 
 This create the cluster with auto create topics and the external routes to reach the brokers with tls authentication
