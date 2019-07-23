@@ -42,7 +42,7 @@ This create the cluster with auto create topics and the external routes to reach
 ```console 
 oc create -f scripts/kafka/ubuntu/events.yaml
 oc create -f scripts/kafka/ubuntu/control.yaml
-oc create -f scripts/kafka/ubuntu/snapshots.yaml
+oc create -f scripts/kafka/ubuntu/snapshot.yaml
 oc create -f scripts/kafka/ubuntu/kiesessioninfos.yaml
 ```
 #### Checks Topic
