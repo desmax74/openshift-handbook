@@ -40,10 +40,10 @@ kubectl get pods -n my-kafka-project -w
 This create the cluster with auto create topics and the external routes to reach the brokers with tls authentication
 #### create Topic
 ```console 
-oc create -f scripts/kafka/ubuntu/events.yaml
-oc create -f scripts/kafka/ubuntu/control.yaml
-oc create -f scripts/kafka/ubuntu/snapshot.yaml
-oc create -f scripts/kafka/ubuntu/kiesessioninfos.yaml
+oc create -f scripts/kafka/fedora/events.yaml
+oc create -f scripts/kafka/fedora/control.yaml
+oc create -f scripts/kafka/fedora/snapshot.yaml
+oc create -f scripts/kafka/fedora/kiesessioninfos.yaml
 ```
 #### Checks Topic
 ```console 
