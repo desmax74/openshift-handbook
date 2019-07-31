@@ -24,12 +24,12 @@ curl -L https://github.com/strimzi/strimzi-kafka-operator/releases/download/0.12
  
 #### Create the cluster ephemeral
 ```console 
-kubectl apply -f scripts/kakfa/fedora/0.12.1/kafka/kafka-ephemeral.yaml -n my-kafka-project
+kubectl apply -f scripts/kakfa/fedora/0.12.1/kafka-ephemeral.yaml -n my-kafka-project
 ```
 
 #### Create the cluster persistent
 ```console 
-kubectl apply -f scripts/kakfa/fedora/0.12.1/kafka/kafka-persistent-single.yaml -n my-kafka-project
+kubectl apply -f scripts/kakfa/fedora/0.12.1/kafka-persistent-single.yaml -n my-kafka-project
 ```
 
 #### Checks cluster status 
@@ -40,10 +40,10 @@ kubectl get pods -n my-kafka-project -w
 This create the cluster with auto create topics and the external routes to reach the brokers with tls authentication
 #### create Topic
 ```console 
-oc create -f scripts/kafka/ubuntu/events.yaml
-oc create -f scripts/kafka/ubuntu/control.yaml
-oc create -f scripts/kafka/ubuntu/snapshot.yaml
-oc create -f scripts/kafka/ubuntu/kiesessioninfos.yaml
+oc create -f scripts/kafka/fedora/events.yaml
+oc create -f scripts/kafka/fedora/control.yaml
+oc create -f scripts/kafka/fedora/snapshot.yaml
+oc create -f scripts/kafka/fedora/kiesessioninfos.yaml
 ```
 #### Delete Topic
 ```console 
