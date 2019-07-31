@@ -34,11 +34,17 @@ oc create -f control.yaml
 oc create -f snapshot.yaml
 oc create -f kiesessioninfos.yaml
 ```
+#### Delete Topic
+```console 
+oc exec -it my-cluster-kafka-0 -- bin/kafka-topics.sh --zookeeper localhost:2181 --delete --topic <topic_name>
+```
+
 #### Checks Topic
 ```console 
 oc exec -it my-cluster-kafka-0 -- bin/kafka-topics.sh --zookeeper localhost:2181 --describe
 ```
+
 #### Checks Topic's offset
 ```console 
-oc exec -it my-cluster-kafka-0 -- bin/kafka-run-class.sh kafka.tools.GetOffsetShell --broker-list localhost:9092 --topic events
+oc exec -it my-cluster-kafka-0 -- bin/kafka-run-class.sh kafka.tools.GetOffsetShell --broker-list localhost:9092 --topic <topic_name>
 ```
