@@ -1,7 +1,7 @@
 ## Notes about Openshift configurations 
  [Git, Maven (Che uses the m2 repo) and JDK are supposed installed and configured]
  
-##### Openshift 4.x [ **[Fedora 29](#)**  - **[Ubuntu 18.x](ubuntu/openshift_4.md)** ] 
+##### Openshift 4.1.x [ **[Fedora 29](fedora/openshift_4.md)**  - **[Ubuntu 18.x](ubuntu/openshift_4.md)** ] 
 ##### Openshift 3.11 [ **[Fedora 29](fedora/openshift.md)**  - **[Ubuntu 18.x](ubuntu/openshift.md)** ]
 ##### Istio 1.1.1 [**[Fedora 29](fedora/istio.md)** - **[Ubuntu 18.x](ubuntu/istio.md)** ]
 ##### Kiali 0.14.0 [**[Fedora 29](fedora/kiali.md)** - **[Ubuntu 18.x](ubuntu/kiali.md)** ]

@@ -11,11 +11,6 @@ https://cloud.redhat.com/openshift/install
 and download or copy your Pull secret from the the laptop
 installation https://cloud.redhat.com/openshift/install/crc/installer-provisioned
 
-#### Install libvirt libs
-```console 
-sudo apt install qemu-kvm libvirt-daemon libvirt-daemon-system network-manager
-```
-
 To avoid no such host error
 ```console 
 sudo nano /etc/hosts 
@@ -38,6 +33,10 @@ At the time os this tutorial the version is 1.0.0-beta.5, change accordingly wit
 
 ```console 
 cd crc-linux-1.0.0-beta.5-amd64
+```
+Add to your path in .bashrc
+
+```console 
 export PATH=$PATH:$(pwd)
 ```
 
@@ -134,7 +133,6 @@ Edit file in  "/home/<user>/.crc/machines/crc/config.json"
     ....
 ```
 
-
 #### CRC version
 ```console
 [max@localhost crc-linux-1.0.0-beta.5-amd64]$ crc version
@@ -151,6 +149,3 @@ Disk Usage:      11.49GB of 16.09GB (Inside the CRC VM)
 Cache Usage:     15.07GB
 Cache Directory: /home/max/.crc/cache
 ```
-
-
-
