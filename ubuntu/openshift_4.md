@@ -94,5 +94,39 @@ INFO These credentials can also be used to access the OpenShift web console at h
 crc console
 ```
 
+#### Stop cluster
+```console 
+crc stop
+```
+
+#### Delete vm
+```console 
+crc delete
+```
+
+#### Configure ram and cpu
+Edit file in  "/home/<user>/.crc/machines/crc/config.json"
+```console 
+{
+    "ConfigVersion": 3,
+    "Driver": {
+        "IPAddress": "192.168.130.11",
+        "MachineName": "crc",
+        "SSHUser": "core",
+        "SSHPort": 0,
+        "StorePath": "/home/<user>/.crc",
+        "BundleName": "crc_libvirt_4.1.14.crcbundle",
+        "SSHKeyPath": "/home/<user>/.crc/cache/crc_libvirt_4.1.14/id_rsa_crc",
+        "Memory": 8192,
+        "CPU": 4,
+        "Network": "crc",
+        "DiskPath": "/home/<user>/.crc/machines/crc/crc",
+        "DiskPathURL": "file:///home/<user>/.crc/cache/crc_libvirt_4.1.14/crc.qcow2",
+        "CacheMode": "default",
+        "IOMode": "threads",
+        "VM": {}
+    },
+    ....
+```
 
 
