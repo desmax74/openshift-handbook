@@ -122,7 +122,7 @@ Edit file in  "/home/<user>/.crc/machines/crc/config.json"
         "StorePath": "/home/<user>/.crc",
         "BundleName": "crc_libvirt_4.1.14.crcbundle",
         "SSHKeyPath": "/home/<user>/.crc/cache/crc_libvirt_4.1.14/id_rsa_crc",
-        "Memory": 8192,
+        "Memory": 16384,
         "CPU": 4,
         "Network": "crc",
         "DiskPath": "/home/<user>/.crc/machines/crc/crc",
