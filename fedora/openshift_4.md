@@ -20,6 +20,10 @@ add (example to use 192.168.130.11)
 192.168.130.11   api.crc.testing
 192.168.130.11   oauth-openshift.apps-crc.testing
 192.168.130.11   console-openshift-console.apps-crc.testing
+192.168.130.11   my-cluster-kafka-bootstrap-my-kafka-project.apps-crc.testing
+192.168.130.11   my-cluster-kafka-0-my-kafka-project.apps-crc.testing
+192.168.130.11   my-cluster-kafka-1-my-kafka-project.apps-crc.testing
+192.168.130.11   my-cluster-kafka-2-my-kafka-project.apps-crc.testing
 ```
 Reboot the system to avoid permission denied on libvirt
 
