@@ -38,10 +38,10 @@ wget https://mirror.openshift.com/pub/openshift-v4/clients/crc/latest/crc-linux-
 tar -xvf crc-linux-amd64.tar.xz
 ```
 
-At the time os this tutorial the version is 1.0.0-beta.5, change accordingly with the updated version downloaded 
+At the time os this tutorial the version is 1.0.0-rc.0+34371d3, change accordingly with the updated version downloaded 
 
 ```console 
-cd crc-linux-1.0.0-beta.5-amd64
+cd crc-linux-1.0.0-rc.0-amd64
 export PATH=$PATH:$(pwd)
 ```
 
@@ -58,8 +58,9 @@ crc setup
 ```
 
 
+With AMQ Stream/Strimzi cluster is better use 16gb 
 ```console 
-crc start
+crc start config set memory 16384
  ```
  When prompted to image pull secret, paste your pull secret that you copied in the previous step (https://cloud.redhat.com/openshift/install/crc/installer-provisioned)
  and press enter
@@ -95,7 +96,7 @@ INFO These credentials can also be used to access the OpenShift web console at h
 
 or from the file 
 ```console
-~/.crc/cache/crc_libvirt_v4.1.0.rc0/kubeadmin-password
+~/.crc/cache/crc_libvirt_4.2.0-0.nightly-2019-09-26-192831/kubeadmin-password
 ```
 
 #### Open Web Console
@@ -124,13 +125,13 @@ Edit file in  "/home/<user>/.crc/machines/crc/config.json"
         "SSHUser": "core",
         "SSHPort": 0,
         "StorePath": "/home/<user>/.crc",
-        "BundleName": "crc_libvirt_4.1.14.crcbundle",
-        "SSHKeyPath": "/home/<user>/.crc/cache/crc_libvirt_4.1.14/id_rsa_crc",
+        "BundleName": "crc_libvirt_4.2.0-0.nightly-2019-09-26-192831.crcbundle",
+        "SSHKeyPath": "/home/<user>/.crc/cache/crc_libvirt_4.2.0-0.nightly-2019-09-26-192831/id_rsa_crc",
         "Memory": 16384,
         "CPU": 4,
         "Network": "crc",
         "DiskPath": "/home/<user>/.crc/machines/crc/crc",
-        "DiskPathURL": "file:///home/<user>/.crc/cache/crc_libvirt_4.1.14/crc.qcow2",
+        "DiskPathURL": "file:///home/<user>/.crc/cache/crc_libvirt_4.2.0-0.nightly-2019-09-26-192831/crc.qcow2",
         "CacheMode": "default",
         "IOMode": "threads",
         "VM": {}
@@ -138,12 +139,11 @@ Edit file in  "/home/<user>/.crc/machines/crc/config.json"
     ....
 ```
 
-
 #### CRC version
 ```console
-[max@localhost crc-linux-1.0.0-beta.5-amd64]$ crc version
-version: 1.0.0-beta.5+f2aa58c
-OpenShift version: 4.1.14 (embedded in binary)
+[max@localhost]$ crc version
+version: 1.0.0-rc.0+34371d3
+OpenShift version: 4.2.0-0.nightly-2019-09-26-192831 (embedded in binary)
 ```
 
 #### CRC status
@@ -155,6 +155,3 @@ Disk Usage:      11.49GB of 16.09GB (Inside the CRC VM)
 Cache Usage:     15.07GB
 Cache Directory: /home/max/.crc/cache
 ```
-
-
-
