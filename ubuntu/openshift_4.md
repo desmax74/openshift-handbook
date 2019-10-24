@@ -1,4 +1,4 @@
-#### CodeReady Containers 1.0.0 for Openshift 4.1.x
+#### CodeReady Containers 1.0.0 for Openshift 4.2.x
 CodeReady Containers "CRC" is the replacement of minishift (Openshift 3.x) for Openshift version 4
 A Red Hat account is required in order to access the user pull secret.
 You must have a redhat account to install openshift 4 on your local machine.
@@ -38,7 +38,7 @@ wget https://mirror.openshift.com/pub/openshift-v4/clients/crc/latest/crc-linux-
 tar -xvf crc-linux-amd64.tar.xz
 ```
 
-At the time os this tutorial the version is 1.0.0-rc.0+34371d3, change accordingly with the updated version downloaded 
+At the time os this tutorial the version is 1.0.0, change accordingly with the updated version downloaded 
 
 ```console 
 cd crc-linux-1.0.0-rc.0-amd64
@@ -96,7 +96,7 @@ INFO These credentials can also be used to access the OpenShift web console at h
 
 or from the file 
 ```console
-~/.crc/cache/crc_libvirt_4.2.0-0.nightly-2019-09-26-192831/kubeadmin-password
+~/.crc/cache/crc_libvirt_4.2.0/kubeadmin-password
 ```
 
 #### Open Web Console
@@ -125,13 +125,13 @@ Edit file in  "/home/<user>/.crc/machines/crc/config.json"
         "SSHUser": "core",
         "SSHPort": 0,
         "StorePath": "/home/<user>/.crc",
-        "BundleName": "crc_libvirt_4.2.0-0.nightly-2019-09-26-192831.crcbundle",
-        "SSHKeyPath": "/home/<user>/.crc/cache/crc_libvirt_4.2.0-0.nightly-2019-09-26-192831/id_rsa_crc",
+        "BundleName": "crc_libvirt_4.2.0.crcbundle",
+        "SSHKeyPath": "/home/<user>/.crc/cache/crc_libvirt_4.2.0/id_rsa_crc",
         "Memory": 16384,
         "CPU": 4,
         "Network": "crc",
         "DiskPath": "/home/<user>/.crc/machines/crc/crc",
-        "DiskPathURL": "file:///home/<user>/.crc/cache/crc_libvirt_4.2.0-0.nightly-2019-09-26-192831/crc.qcow2",
+        "DiskPathURL": "file:///home/<user>/.crc/cache/crc_libvirt_4.2.0/crc.qcow2",
         "CacheMode": "default",
         "IOMode": "threads",
         "VM": {}
@@ -142,16 +142,16 @@ Edit file in  "/home/<user>/.crc/machines/crc/config.json"
 #### CRC version
 ```console
 [max@localhost]$ crc version
-version: 1.0.0-rc.0+34371d3
-OpenShift version: 4.2.0-0.nightly-2019-09-26-192831 (embedded in binary)
+crc version: 1.0.0+575079b
+OpenShift version: 4.2.0 (embedded in binary)
 ```
 
 #### CRC status
 ```console
 [max@localhost crc-linux-1.0.0-beta.5-amd64]$ crc status
 CRC VM:          Running
-OpenShift:       Running (v4.x)
-Disk Usage:      11.49GB of 16.09GB (Inside the CRC VM)
-Cache Usage:     15.07GB
+OpenShift:       Running (v4.2.0)
+Disk Usage:      9.783GB of 32.2GB (Inside the CRC VM)
+Cache Usage:     25.48GB
 Cache Directory: /home/max/.crc/cache
 ```
