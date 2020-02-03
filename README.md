@@ -12,5 +12,6 @@
 ##### Kafka/Zookeeper/Strimzi 0.11.1  [[Fedora 30](fedora/kafka.md) - [Ubuntu 19.x](ubuntu/kafka.md)]
 ##### Kafka/Zookeeper/Strimzi 0.12.1  [[Fedora 30](fedora/kafka_0121.md) - [Ubuntu 19.x](ubuntu/kafka_0121.md)]
 ##### Kafka/Zookeeper/Strimzi 0.12.2  [[Fedora 30](fedora/kafka_0122.md) - [Ubuntu 19.x](ubuntu/kafka_0122.md)]
+##### Kafka/Zookeeper/Strimzi 0.16.2  [[Fedora 30](fedora/kafka_0162.md) - [Ubuntu 19.x](ubuntu/kafka_0162.md)]
 ##### Buildah, Podman Skopeo, Siege,  Stern and other optional tools [**[Fedora 30](fedora/optional.md)**  - **[Ubuntu 19.x](ubuntu/optional.md)** ]
 ##### Nexus 3 [**[Fedora 30](fedora/nexus.md)** - **[Ubuntu 19.x](ubuntu/nexus.md)**]
