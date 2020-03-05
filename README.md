@@ -15,5 +15,5 @@
 ##### Kafka/Zookeeper/Strimzi 0.16.2  [[Fedora 30](fedora/kafka_0162.md) - [Ubuntu 19.x](ubuntu/kafka_0162.md)]
 ##### Buildah, Podman Skopeo, Siege,  Stern and other optional tools [**[Fedora 30](fedora/optional.md)**  - **[Ubuntu 19.x](ubuntu/optional.md)** ]
 ##### Nexus 3 [**[Fedora 30](fedora/nexus.md)** - **[Ubuntu 19.x](ubuntu/nexus.md)**]
-##### Kogito Operator on Openshift 4.2.x [ **[Fedora 30](fedora/kogito_openshift_4.md)**  - **[Ubuntu 19.x](ubuntu/kogito_openshift_4.md)** ]
-##### Kogito Operator on Openshift 3.11 [ **[Fedora 30](fedora/kogito_openshift.md)**  - **[Ubuntu 19.x](ubuntu/kogito_openshift.md)** ]
+##### Kogito Operator Demo on Openshift 4.2.x [ **[Fedora 30](fedora/kogito_openshift_4.md)**  - **[Ubuntu 19.x](ubuntu/kogito_openshift_4.md)** ]
+##### Kogito Operator Demo on Openshift 3.11 [ **[Fedora 30](fedora/kogito_openshift.md)**  - **[Ubuntu 19.x](ubuntu/kogito_openshift.md)** ]
