@@ -38,10 +38,6 @@ At the time os this tutorial the version is 1.6.0, change accordingly with the u
 
 ```console 
 cd crc-linux-1.6.0-amd64
-```
-Add to your path in .bashrc
-
-```console 
 export PATH=$PATH:$(pwd)
 ```
 
