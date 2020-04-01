@@ -39,10 +39,10 @@ wget https://mirror.openshift.com/pub/openshift-v4/clients/crc/latest/crc-linux-
 tar -xvf crc-linux-amd64.tar.xz
 ```
 
-At the time os this tutorial the version is 1.0.0, change accordingly with the updated version downloaded 
+At the time os this tutorial the version is 1.7.0, change accordingly with the updated version downloaded 
 
 ```console 
-cd crc-linux-1.6.0-amd64
+cd crc-linux-1.7.0-amd64
 export PATH=$PATH:$(pwd)
 ```
 
@@ -126,13 +126,13 @@ Edit file in  "/home/<user>/.crc/machines/crc/config.json"
         "SSHUser": "core",
         "SSHPort": 0,
         "StorePath": "/home/<user>/.crc",
-        "BundleName": "crc_libvirt_4.3.0.crcbundle",
-        "SSHKeyPath": "/home/<user>/.crc/cache/crc_libvirt_4.3.0/id_rsa_crc",
+        "BundleName": "crc_libvirt_4.3.1.crcbundle",
+        "SSHKeyPath": "/home/<user>/.crc/cache/crc_libvirt_4.3.1/id_rsa_crc",
         "Memory": 16384,
         "CPU": 4,
         "Network": "crc",
         "DiskPath": "/home/<user>/.crc/machines/crc/crc",
-        "DiskPathURL": "file:///home/<user>/.crc/cache/crc_libvirt_4.3.0/crc.qcow2",
+        "DiskPathURL": "file:///home/<user>/.crc/cache/crc_libvirt_4.3.1/crc.qcow2",
         "CacheMode": "default",
         "IOMode": "threads",
         "VM": {}
@@ -143,15 +143,15 @@ Edit file in  "/home/<user>/.crc/machines/crc/config.json"
 #### CRC version
 ```console
 [max@localhost]$ crc version
-crc version: 1.6.0+8ef676f
-OpenShift version: 4.3.0 (embedded in binary)
+crc version: 1.7.0+fa7e558
+OpenShift version: 4.3.1 (embedded in binary)
 ```
 
 #### CRC status
 ```console
-[max@localhost crc-linux-1.6.0-amd64]$ crc status
+[max@localhost crc-linux-1.7.0-amd64]$ crc status
 CRC VM:          Running
-OpenShift:       Running (v4.2.0)
+OpenShift:       Running (v4.3.1)
 Disk Usage:      9.783GB of 32.2GB (Inside the CRC VM)
 Cache Usage:     25.48GB
 Cache Directory: /home/max/.crc/cache
