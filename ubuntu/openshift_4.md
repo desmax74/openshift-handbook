@@ -1,4 +1,4 @@
-#### CodeReady Containers 1.6.0 for Openshift 4.3.x
+#### CodeReady Containers 1.7.0 for Openshift 4.3.x
 CodeReady Containers "CRC" is the replacement of minishift (Openshift 3.x) for Openshift version 4
 A Red Hat account is required in order to access the user pull secret.
 You must have a redhat account to install openshift 4 on your local machine.
