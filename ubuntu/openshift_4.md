@@ -97,7 +97,7 @@ INFO These credentials can also be used to access the OpenShift web console at h
 
 or from the file 
 ```console
-~/.crc/cache/crc_libvirt_4.3.8/kubeadmin-password
+~/.crc/cache/crc_libvirt_4.3.1/kubeadmin-password
 ```
 
 #### Open Web Console
