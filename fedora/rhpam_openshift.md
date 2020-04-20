@@ -2,9 +2,15 @@
 
 ```console
 crc start config set memory 16384
+```
 
+### Create the namespace
+```console
 oc new-project my-app
+```
 
+### Registries login
+```console
 docker login -u='<username>' -p=<password>
 
 kubectl create -f ./<secret_from_https://access.redhat.com/>.yaml --namespace=my-app
@@ -71,7 +77,11 @@ oc process -f https://raw.githubusercontent.com/jboss-container-images/rhdm-7-op
 oc process -f https://raw.githubusercontent.com/jboss-container-images/rhdm-7-openshift-image/7.7.0.GA/example-app-secret-template.yaml -p SECRET_NAME=controller-app-secret | oc create -f -
 
 oc process -f https://raw.githubusercontent.com/jboss-container-images/rhdm-7-openshift-image/7.7.0.GA/example-app-secret-template.yaml -p SECRET_NAME=businesscentral-monitoring-app-secret | oc create -f -
+```
 
+### Credential secret
+
+```console
 oc create -f ./../scripts/rhpam/credentials.yaml
 ```
 
@@ -94,16 +104,21 @@ oc new-app -f rhpam77-prod-immutable-kieserver.yaml -p CREDENTIALS_SECRET=rhpam-
        -p KIE_SERVER_CONTAINER_DEPLOYMENT=containerId=G:A:V
 ```
 
-Checks Deployment configs
+### Checks Deployment configs
+
 ```console
 oc get dc
 ```
 
-Deploy DC
+### Deploy DC
+
 ```console
 oc rollout latest dc/my-rhpam-app-rhpamcentrmon -n my-app
 oc rollout latest dc/my-rhpam-app-smartrouter -n my-app
 ```
+
+
+### Troubleshooting
 if you see ann error message like
 
 ```console
