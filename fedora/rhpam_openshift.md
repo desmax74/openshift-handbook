@@ -34,10 +34,18 @@ oc import-image rhpam-kieserver-rhel8:7.7.0 —confirm -n my-app
 oc import-image rhpam-smartrouter-rhel8:7.7.0 —confirm -n my-app
 ```
 
-Checks Image Streams
-
+### Checks Image Streams
 ```console
 oc get is
+```
+and open on the UI, if the registry isn't accessible patch the registry
+```console
+oc patch is/rhpam-businesscentral-monitoring-rhel8 --type='json' -p '[{"op": "replace", "path": "/spec/tags/0/from/name", "value": "registry.redhat.io/rhpam-7/rhpam-businesscentral-monitoring-rhel8:7.7.0"}]'
+oc patch is/rhpam-businesscentral-rhel8 --type='json' -p '[{"op": "replace", "path": "/spec/tags/0/from/name", "value": "registry.redhat.io/rhpam-7/rhpam-businesscentral-rhel8:7.7.0"}]'
+oc patch is/rhpam-controller-rhel8 --type='json' -p '[{"op": "replace", "path": "/spec/tags/0/from/name", "value": "rregistry.redhat.io/rhpam-7/rhpam-controller-rhel8:7.7.0"}]'
+oc patch is/rhpam-kieserver-rhel8 --type='json' -p '[{"op": "replace", "path": "/spec/tags/0/from/name", "value": "registry.redhat.io/rhpam-7/rhpam-kieserver-rhel8:7.7.0"}]'
+oc patch is/rhpam-smartrouter-rhel8 --type='json' -p '[{"op": "replace", "path": "/spec/tags/0/from/name", "value": "registry.redhat.io/rhpam-7/rhpam-smartrouter-rhel8:7.7.0"}]'
+oc patch is/rhpam-process-migration-rhel8 --type='json' -p '[{"op": "replace", "path": "/spec/tags/0/from/name", "value": "registry.redhat.io/rhpam-7/rhpam-process-migration-rhel8:7.7.0"}]'
 ```
 
 
@@ -95,4 +103,46 @@ Deploy DC
 ```console
 oc rollout latest dc/my-rhpam-app-rhpamcentrmon -n my-app
 oc rollout latest dc/my-rhpam-app-smartrouter -n my-app
+```
+if you see ann error message like
+
+```console
+Error from server (BadRequest): cannot trigger a deployment for "my-rhpam-app-rhpamcentrmon" because it contains unresolved images
+```
+
+checks the following item in the UI:
+DeploymentConfig namespace (change if you have openshift default namespace with your namespace)
+ ```console
+spec:
+  strategy:
+    type: Rolling
+    rollingParams:
+      updatePeriodSeconds: 1
+      intervalSeconds: 1
+      timeoutSeconds: 600
+      maxUnavailable: 0
+      maxSurge: 100%
+    resources: {}
+    activeDeadlineSeconds: 21600
+  triggers:
+    - type: ImageChange
+      imageChangeParams:
+        automatic: true
+        containerNames:
+          - my-rhpam-app-rhpamcentrmon
+        from:
+          kind: ImageStreamTag
+          namespace: my-app
+          name: 'rhpam-businesscentral-monitoring-rhel8:7.7.0' 
+```
+
+ and template (templateInstances in your namespace)
+ (change if you have openshift default namespace with your namespace)
+ ```console
+ 
+ spec:
+  template:
+    metadata:
+      name: rhpam77-prod-immutable-monitor
+      namespace: my-app
 ```
