@@ -1,15 +1,13 @@
-#### Steps to deploy RHPAM 7.7.7.GA monitoring on openshift
+#### Steps to deploy RHPAM 7.7.7.GA monitoring on openshift with templates
 
 ```console
 crc start config set memory 16384
-
 
 oc new-project my-app
 
 docker login -u='<username>' -p=<password>
 
 kubectl create -f ./<secret_from_https://access.redhat.com/>.yaml --namespace=my-app
-
 
 oc create secret docker-registry red-hat-container-registry \
     --docker-server=registry.redhat.io \
@@ -18,10 +16,10 @@ oc create secret docker-registry red-hat-container-registry \
     --docker-email="<email>"
 
 oc secrets link builder red-hat-container-registry --for=pull
-
 ```
 
 ### Import image streams
+
 ```console
 oc create -f https://raw.githubusercontent.com/jboss-container-images/rhpam-7-openshift-image/7.7.0.GA/rhpam77-image-streams.yaml
 
@@ -37,6 +35,7 @@ oc import-image rhpam-smartrouter-rhel8:7.7.0 —confirm -n my-app
 ```
 
 Checks Image Streams
+
 ```console
 oc get is
 ```
@@ -48,7 +47,8 @@ oc get is
 oc create -f https://raw.githubusercontent.com/jboss-container-images/rhpam-7-openshift-image/7.7.0.GA/templates/rhpam77-prod-immutable-monitor.yaml
 ```
 
-###Secret and service account
+### Secret and service account
+
 ```console
 oc process -f https://raw.githubusercontent.com/jboss-container-images/rhdm-7-openshift-image/7.7.0.GA/example-app-secret-template.yaml -p SECRET_NAME=automationmanager-app-secret | oc create -f -
 
@@ -67,7 +67,8 @@ oc process -f https://raw.githubusercontent.com/jboss-container-images/rhdm-7-op
 oc create -f ./../scripts/rhpam/credentials.yaml
 ```
 
-Deploy template
+### Deploy template
+
 ```console
 oc new-app --template=rhpam77-prod-immutable-monitor -p APPLICATION_NAME="my-rhpam-app" \ 
         -p IMAGE_STREAM_NAMESPACE="openshift" -p CREDENTIALS_SECRET="rhpam-credentials" \ 
