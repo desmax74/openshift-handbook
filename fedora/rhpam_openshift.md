@@ -79,7 +79,7 @@ oc create -f ./../scripts/rhpam/credentials.yaml
 
 ```console
 oc new-app --template=rhpam77-prod-immutable-monitor -p APPLICATION_NAME="my-rhpam-app" \ 
-        -p IMAGE_STREAM_NAMESPACE="openshift" -p CREDENTIALS_SECRET="rhpam-credentials" \ 
+        -p IMAGE_STREAM_NAMESPACE="my-app" -p CREDENTIALS_SECRET="rhpam-credentials" \ 
         -p MAVEN_REPO_USERNAME="dmAdmin" -p MAVEN_REPO_PASSWORD="redhatdm1!" \ 
         -p KIE_SERVER_ROUTER_HTTPS_SECRET="kieserver-router-secret" \ 
         -p BUSINESS_CENTRAL_HTTPS_SECRET="businesscentral-app-secret"
