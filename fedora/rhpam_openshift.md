@@ -1,4 +1,4 @@
-#### Steps to deploy RHPAM 7.7.7.GA monitoring on openshift with templates
+#### Steps to deploy RHPAM 7.7.7.GA monitoring on CRC 1.8.0 - Openshift 4.3.x with templates
 
 ```console
 crc start config set memory 16384
