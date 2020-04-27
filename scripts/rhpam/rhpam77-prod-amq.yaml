@@ -565,23 +565,23 @@ objects:
         name: "${APPLICATION_NAME}-smartrouter"
     roleRef:
       name: view
-        ##AMQ BEGIN
-        - kind: Service
-          apiVersion: v1
-          spec:
-            clusterIP: None
-            ports:
-              - port: 61616
-                targetPort: 61616
-            selector:
-              deploymentConfig: "${APPLICATION_NAME}-amq"
-          metadata:
-            name: "${APPLICATION_NAME}-amq-tcp"
-            annotations:
-              description: The broker's OpenWire port.
-            labels:
-              application: "${APPLICATION_NAME}"
-              service: "${APPLICATION_NAME}-amq-tcp"
+  ##AMQ BEGIN
+  - kind: Service
+    apiVersion: v1
+    spec:
+      clusterIP: None
+      ports:
+        - port: 61616
+          targetPort: 61616
+      selector:
+        deploymentConfig: "${APPLICATION_NAME}-amq"
+    metadata:
+      name: "${APPLICATION_NAME}-amq-tcp"
+      annotations:
+        description: The broker's OpenWire port.
+      labels:
+        application: "${APPLICATION_NAME}"
+        service: "${APPLICATION_NAME}-amq-tcp"
   ## AMQ END
   - kind: Service
     apiVersion: v1
