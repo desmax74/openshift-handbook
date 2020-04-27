@@ -565,7 +565,6 @@ objects:
         name: "${APPLICATION_NAME}-smartrouter"
     roleRef:
       name: view
-  ##AMQ BEGIN
   - kind: Service
     apiVersion: v1
     spec:
@@ -582,7 +581,6 @@ objects:
       labels:
         application: "${APPLICATION_NAME}"
         service: "${APPLICATION_NAME}-amq-tcp"
-  ## AMQ END
   - kind: Service
     apiVersion: v1
     spec:
