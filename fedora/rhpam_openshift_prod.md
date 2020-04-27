@@ -1,6 +1,5 @@
 #### Steps to deploy RHPAM 7.7.7.GA monitoring - Openshift 4.3.x with templates
 
-
 ##### Start CRC 1.8.0
 ```console
 crc start config set memory 16384
@@ -26,11 +25,9 @@ kubectl create -f ./<secret_from_https://access.redhat.com/>.yaml --namespace=my
 ### Credentials
 ```console
 oc create -f installation/credentials.yaml
-
 ```
 
 ### App secrets
-
 one for all, just for development
 ```console
 oc process -f https://raw.githubusercontent.com/jboss-container-images/rhdm-7-openshift-image/7.7.0.GA/example-app-secret-template.yaml -p SECRET_NAME=app-secret | oc create -f -
@@ -51,5 +48,23 @@ oc process -f https://raw.githubusercontent.com/jboss-container-images/rhdm-7-op
 
 ```console
 oc create -f https://raw.githubusercontent.com/jboss-container-images/rhpam-7-openshift-image/7.7.0.GA/rhpam77-image-streams.yaml
+```
 
+###Upload your template
+```console
+oc create -f https://raw.githubusercontent.com/jboss-container-images/rhpam-7-openshift-image/7.7.0.GA/templates/rhpam77-authoring-ha.yaml
+```
+###List templates in your namespace
+```console
+oc get templates -n my-app
+```
+
+### Edit if you need
+```console
+oc edit template rhpam77-prod
+```
+
+### Deploy template using a file with all the params
+```console
+oc new-app --template=rhpam77-prod --param-file=prod.env
 ```
