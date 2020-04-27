@@ -751,22 +751,22 @@ objects:
       port:
         targetPort: http
   ##AMQ BEGIN
-  - apiVersion: v1
-      kind: Service
-      spec:
-        clusterIP: None
-        ports:
-          - port: 61616
-            targetPort: 61616
-        selector:
-          deploymentConfig: "${APPLICATION_NAME}-amq"
-      metadata:
-        name: "${APPLICATION_NAME}-amq-tcp"
-        annotations:
-          description: The broker's OpenWire port.
-        labels:
-          application: "${APPLICATION_NAME}"
-          service: "${APPLICATION_NAME}-amq-tcp"
+  - kind: Service
+    apiVersion: v1
+    spec:
+      clusterIP: None
+      ports:
+        - port: 61616
+          targetPort: 61616
+      selector:
+        deploymentConfig: "${APPLICATION_NAME}-amq"
+    metadata:
+      name: "${APPLICATION_NAME}-amq-tcp"
+      annotations:
+        description: The broker's OpenWire port.
+      labels:
+        application: "${APPLICATION_NAME}"
+        service: "${APPLICATION_NAME}-amq-tcp"
     ## AMQ END
   - kind: Route
     apiVersion: v1
