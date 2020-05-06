@@ -52,7 +52,7 @@ oc create -f https://raw.githubusercontent.com/jboss-container-images/rhpam-7-op
 
 ###Upload your template
 ```console
-oc create -f https://raw.githubusercontent.com/jboss-container-images/rhpam-7-openshift-image/7.7.0.GA/templates/rhpam77-prod.yaml
+oc create -f https://raw.githubusercontent.com/jboss-container-images/rhpam-7-openshift-image/7.7.0.GA/templates/rhpam77-authoring-ha.yaml
 ```
 ###List templates in your namespace
 ```console
@@ -61,10 +61,10 @@ oc get templates -n my-app
 
 ### Edit if you need
 ```console
-oc edit template rhpam77-prod
+oc edit template rhpam77-authoring-ha
 ```
 
 ### Deploy template using a file with all the params
 ```console
-oc new-app --template=rhpam77-prod --param-file=prod.env
+oc new-app --template=authoring-ha --param-file=authoring.env
 ```
