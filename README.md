@@ -1,7 +1,7 @@
 ## Notes about Openshift configurations 
  [Git, Maven (Che uses the m2 repo) and JDK are supposed installed and configured]
  
-##### Openshift 4.3.x [ **[Fedora 30](fedora/openshift_4.md)**  - **[Ubuntu 19.x](ubuntu/openshift_4.md)** ]
+##### Openshift 4.4.x [ **[Fedora 30](fedora/openshift_4.md)**  - **[Ubuntu 19.x](ubuntu/openshift_4.md)** ]
 ##### Openshift 3.11 [ **[Fedora 30](fedora/openshift.md)**  - **[Ubuntu 19.x](ubuntu/openshift.md)** ]
 
 ##### RHPAM 7.7.0 monitoring [**[Fedora 30](fedora/rhpam_openshift_monitoring.md)** - **[Ubuntu 19.x]()** ]
