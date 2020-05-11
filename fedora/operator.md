@@ -30,6 +30,53 @@ spec:
 EOF
 ```
 
+#### Catalog Source
+```console
+cat <<EOF | oc apply -f -
+apiVersion: operators.coreos.com/v1
+kind: CatalogSourceConfig
+metadata:
+ name: kiecloud-operators
+ namespace: openshift-marketplace
+spec:
+ targetNamespace: openshift-operators"
+ packages: kiecloud-operator
+ source: upstream-community-operators
+EOF
+```
+
+#### Operator Group
+```console
+cat <<EOF | oc apply -f -
+apiVersion: operators.coreos.com/v1alpha2
+kind: OperatorGroup
+metadata:
+ name: kiecloud-operator
+ namespace: default
+spec:
+ targetNamespaces:
+ - default
+EOF
+```
+
+#### Subscription
+```console
+cat <<EOF | oc apply -f -
+apiVersion: operators.coreos.com/v1alpha1
+kind: Subscription
+metadata:
+ name: kiecloud-operator
+ namespace: default
+spec:
+ channel: stable
+ installPlanApproval: Automatic
+ name: kiecloud-operator
+ source: upstream-community-operators
+ sourceNamespace: default
+EOF
+```
+
+
 #### Error message
 ERROR:operatorcourier.push:{"error":{"code":"package-exists","details":{},"message":"package exists already"}}
 solution:
