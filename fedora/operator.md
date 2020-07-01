@@ -3,6 +3,11 @@ In the following command desmax is the namespace, replace with your
 
 docker push quay.io/desmax74/kie-cloud-operator:<version>
 
+#### Install operator courier
+```console
+pip3 install operator-courier
+```
+
 #### Verify
 ```console
 operator-courier verify deploy/catalog_resources/community
