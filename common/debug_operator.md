@@ -1,10 +1,13 @@
+### CRC
+First create yourname namespace if isn't exists yet e.g. playground
+start crc and login from cli as kubeadmin
+
 ### IDE
 On your ide create a remote debug profile 
 with host= localhost
 and port= 2345
 
 #### CLI 
-First create yourname namespace if isn't exists yet e.g. playground
 ```console 
 
 # Export the ENV VAR WATCH_NAMESPACE 
