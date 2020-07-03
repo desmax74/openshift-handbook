@@ -7,6 +7,11 @@ On your ide create a remote debug profile
 with host= localhost
 and port= 2345
 
+#### DLV
+```console 
+go get -u github.com/go-delve/delve/cmd/dlv
+```
+
 #### CLI 
 ```console 
 
@@ -22,3 +27,13 @@ $ cd cmd/manager/
 # Run the following command
 $ dlv debug --headless --listen=:2345 --api-version=2
 ```
+
+#### Debug reconcile
+To debug code other main.go
+create a kieapp (in case of kie-cloud-operator)
+i.e.
+```console 
+oc create -f deploy/crs/v2/kieapp_rhpam_production.yaml
+```
+
+To test again, go in the Openshift console in Administration->Custom Resource Definitions -> KieApp - >instances
