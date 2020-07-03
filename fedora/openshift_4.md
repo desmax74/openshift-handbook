@@ -1,4 +1,4 @@
-#### CodeReady Containers 1.10.0 for Openshift 4.4.x
+#### CodeReady Containers 1.12.0 for Openshift 4.4.x
 CodeReady Containers "CRC" is the replacement of minishift (Openshift 3.x) for Openshift version 4
 A Red Hat account is required in order to access the user pull secret.
 You must have a redhat account to install openshift 4 on your local machine.
@@ -11,21 +11,7 @@ https://cloud.redhat.com/openshift/install
 and download or copy your Pull secret from the the laptop
 installation https://cloud.redhat.com/openshift/install/crc/installer-provisioned
 
-To avoid no such host error
-```console 
-sudo nano /etc/hosts 
-```
-add (example to use 192.168.130.11)
-```console 
-192.168.130.11   api.crc.testing
-192.168.130.11   foo.apps-crc.testing
-192.168.130.11   oauth-openshift.apps-crc.testing
-192.168.130.11   console-openshift-console.apps-crc.testing
-192.168.130.11   my-cluster-kafka-bootstrap-my-kafka-project.apps-crc.testing
-192.168.130.11   my-cluster-kafka-0-my-kafka-project.apps-crc.testing
-192.168.130.11   my-cluster-kafka-1-my-kafka-project.apps-crc.testing
-192.168.130.11   my-cluster-kafka-2-my-kafka-project.apps-crc.testing
-```
+
 Reboot the system to avoid permission denied on libvirt
 
 #### Download latest CRC
@@ -37,21 +23,23 @@ tar -xvf crc-linux-amd64.tar.xz
 At the time os this tutorial the version is 1.10.0, change accordingly with the updated version downloaded
 
 ```console 
-cd crc-linux-1.10.0-amd64
+cd crc-linux-1.12.0-amd64
 export PATH=$PATH:$(pwd)
 ```
 
-#### Pre Setup
-```console 
-sudo usermod -aG libvirtd $(whoami)
-newgrp libvirtd
-crc config set skip-check-user-in-libvirt-group true
-```
 
 #### Setup
 ```console 
 crc setup
 ```
+Crc setup will create in /etc/hosts this mapping
+```console 
+127.0.0.1   localhost localhost.localdomain localhost4 localhost4.localdomain4
+::1         localhost localhost.localdomain localhost6 localhost6.localdomain6
+192.168.130.11 api.crc.testing oauth-openshift.apps-crc.testing console-openshift-console.apps-crc.testing default-route-openshift-image-registry.apps-crc.testing
+```
+
+
 
 With AMQ Stream/Strimzi cluster is better use 16gb 
 ```console 
@@ -91,7 +79,7 @@ INFO These credentials can also be used to access the OpenShift web console at h
 
 or from the file 
 ```console
-~/.crc/cache/crc_libvirt_4.4.3/kubeadmin-password
+~/.crc/cache/crc_libvirt_4.4.8/kubeadmin-password
 ```
 
 #### Open Web Console
@@ -120,13 +108,13 @@ Edit file in  "/home/<user>/.crc/machines/crc/config.json"
         "SSHUser": "core",
         "SSHPort": 0,
         "StorePath": "/home/<user>/.crc",
-        "BundleName": "crc_libvirt_4.4.3.crcbundle",
-        "SSHKeyPath": "/home/<user>/.crc/cache/crc_libvirt_4.4.3/id_rsa_crc",
-        "Memory": 16384,
+        "BundleName": "crc_libvirt_4.4.8.crcbundle",
+        "SSHKeyPath": "/home/<user>/.crc/cache/crc_libvirt_4.4.8/id_rsa_crc",
+        "Memory": 9216,
         "CPU": 4,
         "Network": "crc",
         "DiskPath": "/home/<user>/.crc/machines/crc/crc",
-        "DiskPathURL": "file:///home/<user>/.crc/cache/crc_libvirt_4.4.3/crc.qcow2",
+        "DiskPathURL": "file:///home/<user>/.crc/cache/crc_libvirt_4.4.8/crc.qcow2",
         "CacheMode": "default",
         "IOMode": "threads",
         "VM": {}
@@ -136,17 +124,18 @@ Edit file in  "/home/<user>/.crc/machines/crc/config.json"
 
 #### CRC version
 ```console
-[max@localhost]$ crc version
-crc version: 1.10.0+9025021
-OpenShift version: 4.4.3 (embedded in binary)
+[<user>@localhost]$ crc version
+CodeReady Containers version: 1.12.0+6710aff
+OpenShift version: 4.4.8 (embedded in binary)
 ```
 
 #### CRC status
 ```console
-[max@localhost]$ crc status
+[<user>@localhost]$ crc status
 CRC VM:          Running
-OpenShift:       Running (v4.4.3)
-Disk Usage:      9.783GB of 32.2GB (Inside the CRC VM)
-Cache Usage:     25.48GB
+OpenShift:       Running (v4.4.8)
+Disk Usage:      12.31GB of 32.72GB (Inside the CRC VM)
+Cache Usage:     12.27GB
 Cache Directory: /home/<user>/.crc/cache
+
 ```
