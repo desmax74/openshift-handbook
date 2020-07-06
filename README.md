@@ -6,7 +6,6 @@
 ##### Operator [ **[Fedora 32](fedora/operator.md)**  - **[Ubuntu 19.x](#quay)** ]
 ##### Debug Operator [ **[Debug operator](common/debug_operator.md)**  ]
 
-##### RHPAM 7.7.0 monitoring [**[Fedora 32](fedora/rhpam_openshift_monitoring.md)** - **[Ubuntu 19.x]()** ]
 ##### RHPAM 7.7.0 authoring-ha [**[Fedora 32](fedora/rhpam_openshift_authoring_ha.md)** - **[Ubuntu 19.x]()** ]
 ##### RHPAM 7.7.0 prod [**[Fedora 32](fedora/rhpam_openshift_prod.md)** - **[Ubuntu 19.x]()** ]
 
