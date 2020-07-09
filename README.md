@@ -5,7 +5,7 @@
 ##### Openshift 3.11 [ **[Fedora 32](fedora/openshift.md)**  - **[Ubuntu 19.x](ubuntu/openshift.md)** ]
 ##### Operator [ **[Fedora 32](fedora/operator.md)**  - **[Ubuntu 19.x](#quay)** ]
 ##### Debug Operator [ **[Debug operator](common/debug_operator.md)**  ]
-##### Images [ **[Images](common/images.md)**  ]
+##### Images inist scripts [ **[Images](common/images.md)**  ]
 
 ##### RHPAM 7.7.0 authoring-ha [**[Fedora 32](fedora/rhpam_openshift_authoring_ha.md)** - **[Ubuntu 19.x]()** ]
 ##### RHPAM 7.7.0 prod [**[Fedora 32](fedora/rhpam_openshift_prod.md)** - **[Ubuntu 19.x]()** ]
