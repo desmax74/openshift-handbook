@@ -10,6 +10,8 @@
 ##### RHPAM 7.7.0 authoring-ha [**[Fedora 32](fedora/rhpam_openshift_authoring_ha.md)** - **[Ubuntu 19.x]()** ]
 ##### RHPAM 7.7.0 prod [**[Fedora 32](fedora/rhpam_openshift_prod.md)** - **[Ubuntu 19.x]()** ]
 
+##### Lifecycle [**[Lifecycle](common/lifecycle.md)** ]
+
 ##### Istio 1.1.1 [**[Fedora 32](fedora/istio.md)** - **[Ubuntu 19.x](ubuntu/istio.md)** ]
 ##### Kiali 0.14.0 [**[Fedora 32](fedora/kiali.md)** - **[Ubuntu 19.x](ubuntu/kiali.md)** ]
 ##### Eclipse Che 6 (single user) [**[Fedora 32](fedora/eclipse_che.md)** - **[Ubuntu 19.x](ubuntu/eclipse_che.md)**]
