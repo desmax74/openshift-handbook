@@ -50,11 +50,11 @@ oc process -f https://raw.githubusercontent.com/jboss-container-images/rhdm-7-op
 oc create -f https://raw.githubusercontent.com/jboss-container-images/rhpam-7-openshift-image/7.7.0.GA/rhpam77-image-streams.yaml
 ```
 
-###Upload your template
+### Upload your template
 ```console
 oc create -f https://raw.githubusercontent.com/jboss-container-images/rhpam-7-openshift-image/7.7.0.GA/templates/rhpam77-authoring-ha.yaml
 ```
-###List templates in your namespace
+### List templates in your namespace
 ```console
 oc get templates -n my-app
 ```
