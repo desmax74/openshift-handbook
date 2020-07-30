@@ -13,7 +13,13 @@ pip3 install operator-courier
 operator-courier verify deploy/catalog_resources/community
 ```
 
-#### Push on Quay
+#### Push on 
+Replace "basic xxxxxx=" with "basic <your_key>" using the value of the auth key of quay in your ~/.docker/config.json
+
+"quay.io": {
+      "auth": "<your_key>"
+},
+    
 ```console
 operator-courier push deploy/catalog_resources/community desmax74 kiecloud-operator $(go run getversion.go) "basic xxxxxx="
 ```
