@@ -1,4 +1,4 @@
-#### CodeReady Containers 1.12.0 for Openshift 4.4.x
+#### CodeReady Containers 1.13.0 for Openshift 4.5.x
 CodeReady Containers "CRC" is the replacement of minishift (Openshift 3.x) for Openshift version 4
 A Red Hat account is required in order to access the user pull secret.
 You must have a redhat account to install openshift 4 on your local machine.
@@ -23,7 +23,7 @@ tar -xvf crc-linux-amd64.tar.xz
 At the time os this tutorial the version is 1.10.0, change accordingly with the updated version downloaded
 
 ```console 
-cd crc-linux-1.12.0-amd64
+cd crc-linux-1.13.0-amd64
 export PATH=$PATH:$(pwd)
 ```
 
@@ -79,7 +79,7 @@ INFO These credentials can also be used to access the OpenShift web console at h
 
 or from the file 
 ```console
-~/.crc/cache/crc_libvirt_4.4.8/kubeadmin-password
+~/.crc/cache/crc_libvirt_4.5.1/kubeadmin-password
 ```
 
 #### Open Web Console
@@ -109,12 +109,12 @@ Edit file in  "/home/<user>/.crc/machines/crc/config.json"
         "SSHPort": 0,
         "StorePath": "/home/<user>/.crc",
         "BundleName": "crc_libvirt_4.4.8.crcbundle",
-        "SSHKeyPath": "/home/<user>/.crc/cache/crc_libvirt_4.4.8/id_rsa_crc",
+        "SSHKeyPath": "/home/<user>/.crc/cache/crc_libvirt_4.5.1/id_rsa_crc",
         "Memory": 9216,
         "CPU": 4,
         "Network": "crc",
         "DiskPath": "/home/<user>/.crc/machines/crc/crc",
-        "DiskPathURL": "file:///home/<user>/.crc/cache/crc_libvirt_4.4.8/crc.qcow2",
+        "DiskPathURL": "file:///home/<user>/.crc/cache/crc_libvirt_4.4.18/crc.qcow2",
         "CacheMode": "default",
         "IOMode": "threads",
         "VM": {}
@@ -125,17 +125,17 @@ Edit file in  "/home/<user>/.crc/machines/crc/config.json"
 #### CRC version
 ```console
 [<user>@localhost]$ crc version
-CodeReady Containers version: 1.12.0+6710aff
-OpenShift version: 4.4.8 (embedded in binary)
+CodeReady Containers version: 1.13.0+8070bae
+OpenShift version: 4.5.1 (embedded in binary)
 ```
 
 #### CRC status
 ```console
 [<user>@localhost]$ crc status
 CRC VM:          Running
-OpenShift:       Running (v4.4.8)
-Disk Usage:      12.31GB of 32.72GB (Inside the CRC VM)
-Cache Usage:     12.27GB
+OpenShift:       Running (v4.5.1)
+Disk Usage:      13.63GB of 32.72GB (Inside the CRC VM)
+Cache Usage:     11.78GB
 Cache Directory: /home/<user>/.crc/cache
 
 ```
