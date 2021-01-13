@@ -1,8 +1,8 @@
 #### Steps to deploy RHPAM 7.7.7.GA monitoring - Openshift 4.3.x with templates
 
-##### Start CRC 1.8.0
+##### Start CRC 1.12.0
 ```console
-crc start config set memory 16384
+crc start --memory 51200 --cpus=14
 ```
 
 ##### Login
@@ -67,4 +67,12 @@ oc edit template rhpam77-authoring-ha
 ### Deploy template using a file with all the params
 ```console
 oc new-app --template=authoring-ha --param-file=authoring.env
+```
+
+
+#### Steps to deploy RHPAM 7.9.X.GA monitoring - Openshift 4.6.x with operator
+
+##### Start CRC 1.12.0
+```console
+crc start --memory 51200 --cpus=14
 ```

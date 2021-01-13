@@ -1,4 +1,4 @@
-#### CodeReady Containers 1.16.0 for Openshift 4.5.x
+#### CodeReady Containers 1.20.0 for Openshift 4.6.x
 CodeReady Containers "CRC" is the replacement of minishift (Openshift 3.x) for Openshift version 4
 A Red Hat account is required in order to access the user pull secret.
 You must have a redhat account to install openshift 4 on your local machine.
@@ -23,7 +23,7 @@ tar -xvf crc-linux-amd64.tar.xz
 At the time os this tutorial the version is 1.10.0, change accordingly with the updated version downloaded
 
 ```console 
-cd crc-linux-1.16.0-amd64
+cd crc-linux-1.20.0-amd64
 export PATH=$PATH:$(pwd)
 ```
 
@@ -43,7 +43,7 @@ Crc setup will create in /etc/hosts this mapping
 
 With AMQ Stream/Strimzi cluster is better use 16gb 
 ```console 
-crc start config set memory 16384 
+crc start --memory 16384 
  ```
  When prompted to image pull secret, paste your pull secret that you copied in the previous step (https://cloud.redhat.com/openshift/install/crc/installer-provisioned)
  and press enter
@@ -79,7 +79,7 @@ INFO These credentials can also be used to access the OpenShift web console at h
 
 or from the file 
 ```console
-~/.crc/cache/crc_libvirt_4.5.9/kubeadmin-password
+~/.crc/cache/crc_libvirt_4.6.6/kubeadmin-password
 ```
 
 #### Open Web Console
@@ -108,13 +108,13 @@ Edit file in  "/home/<user>/.crc/machines/crc/config.json"
         "SSHUser": "core",
         "SSHPort": 0,
         "StorePath": "/home/<user>/.crc",
-        "BundleName": "crc_libvirt_4.5.9.crcbundle",
-        "SSHKeyPath": "/home/<user>/.crc/cache/crc_libvirt_4.5.9/id_rsa_crc",
-        "Memory": 9216,
-        "CPU": 4,
+        "BundleName": "crc_libvirt_4.6.6.crcbundle",
+        "SSHKeyPath": "/home/<user>/.crc/cache/crc_libvirt_4.6.6/id_rsa_crc",
+        "Memory": 51200,
+        "CPU": 8,
         "Network": "crc",
         "DiskPath": "/home/<user>/.crc/machines/crc/crc",
-        "DiskPathURL": "file:///home/<user>/.crc/cache/crc_libvirt_4.5.9/crc.qcow2",
+        "DiskPathURL": "file:///home/<user>/.crc/cache/crc_libvirt_4.6.6/crc.qcow2",
         "CacheMode": "default",
         "IOMode": "threads",
         "VM": {}
@@ -125,15 +125,15 @@ Edit file in  "/home/<user>/.crc/machines/crc/config.json"
 #### CRC version
 ```console
 [<user>@localhost]$ crc version
-CodeReady Containers version: 1.16.0+bf72d3a
-OpenShift version: 4.5.9 (embedded in binary)
+CodeReady Containers version: 1.20.0+ef3f80d
+OpenShift version: 4.6.6 (embedded in binary)
 ```
 
 #### CRC status
 ```console
 [<user>@localhost]$ crc status
 CRC VM:          Running
-OpenShift:       Running (v4.5.9)
+OpenShift:       Running (v4.6.6)
 Disk Usage:      13.63GB of 32.72GB (Inside the CRC VM)
 Cache Usage:     11.78GB
 Cache Directory: /home/<user>/.crc/cache
