@@ -32,4 +32,30 @@ docker push <server_address>/max/pippo-mybiz-centos8:5.10.0
 ```
 
 ##### Show images
-Go to Project -> builds -> imagestreams 
+Go to Project -> builds -> imagestreams
+
+##### Troubleshoot x509: certificate signed by unknown authority
+If during docker login the response is x509
+```
+docker login -u kubeadmin -p $(oc whoami -t) default-route-openshift-image-registry.apps-crc.testing
+```
+
+First extract the cert with:
+```
+oc extract secret/router-ca --keys=tls.crt -n openshift-ingress-operator
+```
+
+create the dir if isn't present
+```
+mkdir /etc/docker/certs.d/default-route-openshift-image-registry.apps-crc.testing/
+```
+
+and copy the cert inside
+```
+cp tls.crt /etc/docker/certs.d/default-route-openshift-image-registry.apps-crc.testing/
+```
+
+then login again
+```
+docker login -u kubeadmin -p $(oc whoami -t) default-route-openshift-image-registry.apps-crc.testing
+```
