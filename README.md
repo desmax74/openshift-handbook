@@ -1,7 +1,7 @@
 ## Notes about Openshift configurations 
  [Git, Maven (Che uses the m2 repo) and JDK are supposed installed and configured]
  
-##### Openshift 4.5.x [ **[Fedora 32](fedora/openshift_4.md)**  - **[Ubuntu 19.x](ubuntu/openshift_4.md)** ]
+##### Openshift 4.6.x [ **[Fedora 32](fedora/openshift_4.md)**  - **[Ubuntu 19.x](ubuntu/openshift_4.md)** ]
 ##### Openshift 3.11 [ **[Fedora 32](fedora/openshift.md)**  - **[Ubuntu 19.x](ubuntu/openshift.md)** ]
 ##### Operator [ **[Fedora 32](fedora/operator.md)**  - **[Ubuntu 19.x](#quay)** ]
 ##### Debug Operator [ **[Debug operator](common/debug_operator.md)**  ]
