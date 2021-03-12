@@ -27,7 +27,8 @@ kubectl create -f deploy/role.yaml
 kubectl create -f deploy/role_binding.yaml
 
 
-Change the operator.yaml with the images in your local registry 
+Change the operator.yaml with the images in your local registry
+image-registry.openshift-image-registry.svc:5000/max/<image>@sha
 available from the imagestreams 
 
 then 
