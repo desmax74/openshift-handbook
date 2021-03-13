@@ -8,7 +8,7 @@
 ##### Call k8s API from init scripts [ **[Images](common/images.md)**  ]
 ##### Custom images into operator [ **[Images](fedora/customImageIntoOperator.md)**  ]
 ##### Expose internal ocp 4.x registry to use instead external registry [ **[Fedora 33](fedora/expose_registry_ocp4.md)**  ]
-##### Develop and Deploy locally on CRC Business-Automation-Operator using the registry [ **[Fedora 33](fedora/business_automation_operator.md)**  ]
+##### Develop and Deploy locally on CRC Business-Automation-Operator using the registry [ **[Fedora 33](fedora/business_automation_operator_crc.md)**  ]
 
 
 ##### RHPAM 7.7.0 authoring-ha [**[Fedora 32](fedora/rhpam_openshift_authoring_ha.md)** - **[Ubuntu 19.x]()** ]
