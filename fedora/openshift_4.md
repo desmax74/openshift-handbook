@@ -1,4 +1,4 @@
-#### CodeReady Containers 1.20.0 for Openshift 4.6.x
+#### CodeReady Containers 1.24.0 for Openshift 4.7.x
 CodeReady Containers "CRC" is the replacement of minishift (Openshift 3.x) for Openshift version 4
 A Red Hat account is required in order to access the user pull secret.
 You must have a redhat account to install openshift 4 on your local machine.
@@ -23,7 +23,7 @@ tar -xvf crc-linux-amd64.tar.xz
 At the time os this tutorial the version is 1.10.0, change accordingly with the updated version downloaded
 
 ```console 
-cd crc-linux-1.20.0-amd64
+cd crc-linux-1.24.0-amd64
 export PATH=$PATH:$(pwd)
 ```
 
@@ -108,13 +108,13 @@ Edit file in  "/home/<user>/.crc/machines/crc/config.json"
         "SSHUser": "core",
         "SSHPort": 0,
         "StorePath": "/home/<user>/.crc",
-        "BundleName": "crc_libvirt_4.6.6.crcbundle",
-        "SSHKeyPath": "/home/<user>/.crc/cache/crc_libvirt_4.6.6/id_rsa_crc",
+        "BundleName": "crc_libvirt_4.7.2.crcbundle",
+        "SSHKeyPath": "/home/<user>/.crc/cache/crc_libvirt_4.7.2/id_rsa_crc",
         "Memory": 51200,
         "CPU": 8,
         "Network": "crc",
         "DiskPath": "/home/<user>/.crc/machines/crc/crc",
-        "DiskPathURL": "file:///home/<user>/.crc/cache/crc_libvirt_4.6.6/crc.qcow2",
+        "DiskPathURL": "file:///home/<user>/.crc/cache/crc_libvirt_4.7.2/crc.qcow2",
         "CacheMode": "default",
         "IOMode": "threads",
         "VM": {}
@@ -125,15 +125,15 @@ Edit file in  "/home/<user>/.crc/machines/crc/config.json"
 #### CRC version
 ```console
 [<user>@localhost]$ crc version
-CodeReady Containers version: 1.20.0+ef3f80d
-OpenShift version: 4.6.6 (embedded in binary)
+CodeReady Containers version: 1.24.0+5f06e84b
+OpenShift version: 4.7.2 (embedded in executable)
 ```
 
 #### CRC status
 ```console
 [<user>@localhost]$ crc status
 CRC VM:          Running
-OpenShift:       Running (v4.6.6)
+OpenShift:       Running (v4.7.2)
 Disk Usage:      13.63GB of 32.72GB (Inside the CRC VM)
 Cache Usage:     11.78GB
 Cache Directory: /home/<user>/.crc/cache
