@@ -22,10 +22,12 @@
 ##### Codeready 1.0.0.GA [**[Fedora 33](fedora/codeReady.md)** - **[Ubuntu 20.x](ubuntu/codeReady.md)**]
 ##### Knative 0.3.0 [**[Fedora 33](fedora/knative.md)**]
 ##### Infinispan 9 [**[Fedora 33](fedora/infinispan.md)** - **[Ubuntu 20.x](ubuntu/infinispan.md)**]
-##### Kafka/Zookeeper/Strimzi 0.11.1  [[Fedora 33](fedora/kafka.md) - [Ubuntu 20.x](ubuntu/kafka.md)]
-##### Kafka/Zookeeper/Strimzi 0.12.1  [[Fedora 33](fedora/kafka_0121.md) - [Ubuntu 20.x](ubuntu/kafka_0121.md)]
-##### Kafka/Zookeeper/Strimzi 0.12.2  [[Fedora 33](fedora/kafka_0122.md) - [Ubuntu 20.x](ubuntu/kafka_0122.md)]
+##### Kafka/Zookeeper/Strimzi 0.22.1 IN PROGRESS [[Fedora 33](fedora/kafka_0221.md) ]
 ##### Kafka/Zookeeper/Strimzi 0.16.2  [[Fedora 33](fedora/kafka_0162.md) - [Ubuntu 20.x](ubuntu/kafka_0162.md)]
+##### Kafka/Zookeeper/Strimzi 0.12.2  [[Fedora 33](fedora/kafka_0122.md) - [Ubuntu 20.x](ubuntu/kafka_0122.md)]
+##### Kafka/Zookeeper/Strimzi 0.12.1  [[Fedora 33](fedora/kafka_0121.md) - [Ubuntu 20.x](ubuntu/kafka_0121.md)]
+##### Kafka/Zookeeper/Strimzi 0.11.1  [[Fedora 33](fedora/kafka.md) - [Ubuntu 20.x](ubuntu/kafka.md)]
+
 ##### Buildah, Podman Skopeo, Siege,  Stern and other optional tools [**[Fedora 33](fedora/optional.md)**  - **[Ubuntu 20.x](ubuntu/optional.md)** ]
 ##### Nexus 3 [**[Fedora 33](fedora/nexus.md)** - **[Ubuntu 20.x](ubuntu/nexus.md)**]
 
