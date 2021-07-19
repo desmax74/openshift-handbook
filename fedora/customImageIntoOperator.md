@@ -1,4 +1,4 @@
-Top test your images in a deploy i.e using the BA operator 
+To test your images in a deploy i.e using the BA operator 
 
 ```console 
 apiVersion: app.kiegroup.org/v2
