@@ -13,6 +13,7 @@
 
 ##### RHPAM 7.7.0 authoring-ha [**[Fedora 33](fedora/rhpam_openshift_authoring_ha.md)** - **[Ubuntu 20.x]()** ]
 ##### RHPAM 7.7.0 prod [**[Fedora 33](fedora/rhpam_openshift_prod.md)** - **[Ubuntu 20.x]()** ]
+##### SSO Keycloack with templates [**[Fedora 33](fedora/sso.md)** - **[Ubuntu 20.x]()** ]
 
 ##### Lifecycle [**[Lifecycle](common/lifecycle.md)** ]
 
