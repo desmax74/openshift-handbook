@@ -27,6 +27,7 @@ in deploy folder https://github.com/desmax74/kie-cloud-operator/tree/main/deploy
 install
 create service acc -> create roles -> create roles binding -> create operator
 ```console 
+kubectl create -f deploy/crds/kieapp.crd.yaml
 kubectl create -f deploy/service_account.yaml
 kubectl create -f deploy/role.yaml
 kubectl create -f deploy/role_binding.yaml
