@@ -19,3 +19,54 @@ oc get templates
 ```console 
 oc new-app --template=sso74-postgresql
 ```
+
+##### With Operator 
+```console 
+Installed Red-Hat SSO Operator version 7.4.8 from the hub
+created Keycloak instance,
+created realm rhpam
+created roles admin, kie-server, rest-all
+created a user called kie with password kie
+```
+Then Insal BA Operator 7.11.1-1 from the hub and created a kieapp with the following yaml
+
+```console 
+apiVersion: app.kiegroup.org/v2
+kind: KieApp
+metadata:
+  name: rhpam-sso-test
+  namespace: max
+  annotations:
+    consoleName: snippet-rhpam-sso
+    consoleTitle: Configure SSO
+    consoleDesc: Use this snippet to configure sso opts
+    consoleSnippet: "true"
+spec:
+  environment: "rhpam-trial"
+  auth:
+    sso:
+      url: https://keycloak-max.apps-crc.testing/auth/
+      realm: rhpam
+      adminUser: <admin_username>
+      adminPassword: <admin_password>
+  objects:
+    console:
+      ssoClient:
+        name: kie
+        secret: <secret>
+    servers:
+      - name: kieserver-uno
+        deployments: 2
+        ssoClient:
+          name: kie
+          secret: <secret>
+      - name: kieserver-due
+        ssoClient:
+          name: kie
+          secret: <secret>
+```
+
+on keycloak
+```console 
+"Valid Redirect URIs" with https://rhpam-sso-prov-rhpamcentr-max.apps-crc.testing/*
+```
