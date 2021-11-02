@@ -1,0 +1,32 @@
+### registries.conf
+
+```console 
+# Note that changing the order here may break tests.
+unqualified-search-registries = ['docker.io', 'registry.fedoraproject.org', 'quay.io',  'registry.centos.org']
+
+[[registry]]
+# In Nov. 2020, Docker rate-limits image pulling.  To avoid hitting these
+# limits while testing, always use the google mirror for qualified and
+# unqualified `docker.io` images.
+# Ref: https://cloud.google.com/container-registry/docs/pulling-cached-images
+prefix="docker.io"
+
+
+# 2020-10-27 a number of images are not present in gcr.io, and podman
+# barfs spectacularly when trying to fetch them. We've hand-copied
+# those to quay, using skopeo copy --all ...
+[[registry]]
+prefix="docker.io/library"
+location="quay.io/libpod"
+
+# For testing #11933 to make sure that registries.conf is consulted unless
+# --tls-verify is used during container creation.
+[[registry]]
+location="localhost:5000"
+insecure=true
+```
+
+With docker the registries.conf is like this:
+```console 
+registries = ['docker.io', 'registry.fedoraproject.org', 'quay.io', 'registry.centos.org']
+```
