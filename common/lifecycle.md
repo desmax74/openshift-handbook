@@ -13,6 +13,10 @@ like https://github.com/desmax74/jboss-kie-modules/blob/master/jboss-kie-kieserv
 or
 https://github.com/desmax74/jboss-kie-modules/blob/master/jboss-kie-kieserver/added/openshift-launch.sh
 into /opt/eap/bin/openshift-launch.sh
+
+but the values suggest the jvm are set at the end by
+https://github.com/jboss-openshift/cct_module/blob/master/jboss/container/java/jvm/bash/artifacts/opt/jboss/container/java/jvm/java-default-options
+because run with https://github.com/desmax74/jboss-kie-modules/blob/master/jboss-kie-kieserver/added/launch/kieserver-install.sh#L21
 ```console
 kind: Pod
 apiVersion: v1
