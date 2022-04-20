@@ -27,6 +27,7 @@
 ##### Codeready 1.0.0.GA [**[Fedora ](fedora/codeReady.md)** - **[Ubuntu](ubuntu/codeReady.md)**]
 ##### Knative 0.3.0 [**[Fedora](fedora/knative.md)**]
 ##### Infinispan 9 [**[Fedora](fedora/infinispan.md)** - **[Ubuntu](ubuntu/infinispan.md)**]
+##### Kafka/Zookeeper/Strimzi 0.28.0 IN PROGRESS [[Fedora](fedora/kafka_0280.md) ]
 ##### Kafka/Zookeeper/Strimzi 0.22.1 IN PROGRESS [[Fedora](fedora/kafka_0221.md) ]
 ##### Kafka/Zookeeper/Strimzi 0.16.2  [[Fedora](fedora/kafka_0162.md) - [Ubuntu](ubuntu/kafka_0162.md)]
 ##### Kafka/Zookeeper/Strimzi 0.12.2  [[Fedora](fedora/kafka_0122.md) - [Ubuntu](ubuntu/kafka_0122.md)]
