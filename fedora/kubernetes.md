@@ -1,5 +1,6 @@
 #### Prerequisite: 
-###kubectl 
+
+### kubectl 
 
 download binary, sha, check and then install in the path
 ```console

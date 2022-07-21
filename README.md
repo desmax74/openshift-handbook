@@ -1,6 +1,6 @@
 ## Notes about Openshift configurations 
  [Git, Maven (Che uses the m2 repo) and JDK are supposed installed and configured]
-##### Kubernetes common commands [ **[Fedora](fedora/kubernetes.md)**
+##### Kubernetes common commands [ **[Fedora](fedora/kubernetes.md)** ]
 ##### Openshift 4.10.x [ **[Fedora](fedora/openshift_4.md)**  - **[Ubuntu](ubuntu/openshift_4.md)** ]
 ##### Openshift 3.11 [ **[Fedora](fedora/openshift.md)**  - **[Ubuntu](ubuntu/openshift.md)** ]
 ##### Operator [ **[Fedora](fedora/operator.md)**  - **[Ubuntu](#quay)** ]
